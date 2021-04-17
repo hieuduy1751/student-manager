@@ -8,18 +8,21 @@ import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { vi_VN } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
 import vi from '@angular/common/locales/vi';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzButtonModule } from 'ng-zorro-antd/button';
+import { FeaturesComponent } from './layout/features/features.component';
+import { FeaturesModule } from './layout/features/features.module';
 
 registerLocaleData(vi);
 
 @NgModule({
   declarations: [
     AppComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    FeaturesComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,9 @@ registerLocaleData(vi);
     HttpClientModule,
     BrowserAnimationsModule,
     NzLayoutModule,
-    NzButtonModule
+    NzButtonModule,
+    FeaturesModule,
+    ReactiveFormsModule
   ],
   providers: [{ provide: NZ_I18N, useValue: vi_VN }],
   bootstrap: [AppComponent]

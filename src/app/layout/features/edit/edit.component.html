@@ -1,0 +1,55 @@
+<h1 class="text-center">Update student</h1>
+<form [formGroup]="validateForm" (ngSubmit)="updateData(studentID.value, fname.value, lname.value, class.value, address.value, phone.value,dob.value, email.value);" nz-form [nzLayout]="'vertical'" class="w-50 m-auto">
+    <nz-form-item>
+        <nz-form-label nzFor="studentId" nzRequired>Student ID</nz-form-label>
+        <nz-form-control>
+            <input #studentID formControlName="studentId" type="number" name="num" id="num" nz-input required>
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label nzFor="universityClass"nzRequired>Class</nz-form-label>
+        <nz-form-control>
+            <input #class formControlName="class" type="text" name="class" id="class" nz-input required>
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label nzFor="firstName"nzRequired>First Name</nz-form-label>
+        <nz-form-control>
+            <input #fname formControlName="fname" type="text" name="fName" id="fName" nz-input required>
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label nzFor="lastName"nzRequired>Last Name</nz-form-label>
+        <nz-form-control>
+            <input #lname formControlName="lname" type="text" name="lName" id="lName" nz-input required>
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label nzFor="dayOfBirth">Birthday</nz-form-label>
+        <nz-form-control>
+            <input #dob formControlName="dob" type="date" name="dob" id="dob" nz-input>
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label nzFor="phone"nzRequired>Phone</nz-form-label>
+        <nz-form-control>
+            <input #phone formControlName="phone" type="text" name="phone" id="phone" nz-input required>
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label nzFor="email">Email</nz-form-label>
+        <nz-form-control>
+            <input #email formControlName="email" type="email" name="email" id="email" nz-input>
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label nzFor="address"nzRequired>Address</nz-form-label>
+        <nz-form-control>
+            <textarea #address formControlName="address" name="address" id="address" nz-input required></textarea>
+        </nz-form-control>
+    </nz-form-item>
+    <div class="float-right">
+        <button routerLink="../" nz-button nzType="danger" class="m-1">Cancel</button>
+        <button type="submit" nz-button nzType="primary" class="m-1">Comfirm</button>
+    </div>
+</form>
